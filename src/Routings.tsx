@@ -15,6 +15,7 @@ const Routings = () => {
     const dispatch=useDispatch()
       
   useEffect(()=>{
+    if(localStorage.getItem("dataSlice"))
     dispatch(persistDatbase(localStorage.getItem("dataSlice")))
 
   },[])
