@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import { persistDatbase, setSeesionIndex } from '../Features/DataSlice'
+import {  setSeesionIndex } from '../Features/DataSlice'
+import { Mystate } from './MainTypeScript'
 
 const Nav = () => {
   const nav = useNavigate()
-  const state: any = useSelector(state => state)
+  const state: Mystate = useSelector((state:Mystate) => state)
   const [name, setName] = useState('')
   const dispatch = useDispatch()
   //for userName
@@ -28,12 +29,6 @@ const Nav = () => {
             <li className="nav-item">
               <a className="nav-link active" aria-current="page" href="#" onClick={() => nav('/')}>Home</a>
             </li>
-            {/* <li className="nav-item">
-              <a className="nav-link active" href="#" onClick={() => nav('/admin')}>Admin</a>
-            </li> */}
-            {/* <li className="nav-item">
-              <a className="nav-link active bold"  >{name}</a>
-            </li> */}
             <li className="nav-item">
               <a className="nav-link dsabled"  >{(state.sessionIndex == -1) ? <span className='text-white' onClick={() => nav('/login')}>Log in</span> : <span className='text-white' onClick={() => { dispatch(setSeesionIndex(-1)); nav('/login') }}>Log Out</span>}</a>
             </li>

@@ -2,11 +2,12 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { setSeesionIndex } from '../Features/DataSlice'
+import { Mystate, Myuser } from './MainTypeScript'
 
 const Login = () => {
   const navigate=useNavigate()
   const dispatch=useDispatch()
-  const  reduxState:any=useSelector((states:any)=>states)
+  const  reduxState:Mystate=useSelector((states:Mystate)=>states)
   const [state, setState] = useState({
     msg: ''
 })
@@ -19,7 +20,7 @@ useEffect(()=>{
     e.preventDefault()
     let cnt=-1
     let x = e.target
-    reduxState.users.forEach((user:any,i:any)=>{
+    reduxState.users.forEach((user:Myuser,i:number)=>{
       if (x.email.value == user.email && x.password.value == user.password) 
         cnt=i  
        })

@@ -2,19 +2,22 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { addUser } from '../Features/DataSlice'
+import { Mystate } from './MainTypeScript'
 
 const Signup = () => {
     const navigate = useNavigate()
     const dispatch = useDispatch()
-    const  reduxState:any=useSelector((states:any)=>states)
+    const  reduxState:Mystate=useSelector((states:Mystate)=>states)
     const [state, setState] = useState({
         msg: ''
     })
+
     useEffect(()=>{
         if(reduxState.sessionIndex!=-1){
           navigate('/')
         }
       },[])
+
     const SignUpHandler = (e: any) => {
         e.preventDefault()
         let cnt = true
@@ -44,11 +47,6 @@ const Signup = () => {
         } else {
             x.mobile.style.borderColor = ''
         }
-
-
-
-
-
 
         if (cnt) {
             dispatch(addUser({

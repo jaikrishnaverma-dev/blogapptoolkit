@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
-
-const initialState={
+import { Mystate } from "../Pages/MainTypeScript";
+const initialState:Mystate={
 posts:[
     {
         title: ' Using React Select component',

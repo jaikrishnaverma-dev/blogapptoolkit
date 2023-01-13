@@ -3,10 +3,11 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { addBlog } from '../Features/DataSlice'
 import { template } from './imgData'
+import {Mystate } from './MainTypeScript'
 
 const AddPost = () => {
   const dispatch=useDispatch()
-  const state:any=useSelector(state=>state)
+  const state:Mystate=useSelector((state:Mystate)=>state)
   const navigate=useNavigate()
   const FormSubmit = (e: any) => {
     e.preventDefault()

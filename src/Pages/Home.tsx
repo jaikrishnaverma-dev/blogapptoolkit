@@ -2,9 +2,10 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { deleteBlog, setEditIndex } from '../Features/DataSlice'
+import { Mypost, Mystate } from './MainTypeScript'
 
 const Home = () => {
-  const state = useSelector((state: any) => state)
+  const state: Mystate = useSelector((state: Mystate) => state)
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const Deletor = (index: number) => {
@@ -38,7 +39,7 @@ const Home = () => {
 
         <div className="row row-cols-1 row-cols-lg-1 align-items-stretch g-4 py-3 parents">
           {
-            state.posts.map((x: any, i: number) =>
+            state.posts.map((x:Mypost, i: number) =>
               <div className="accordion" id="accordionPanelsStayOpenExample">
                 <div className="col-12 d-flex justify-content-between align-items-center">
                   <small className=" m-2 bold" style={{ color: 'grey' }}>Date:&nbsp; {x.date}</small>

@@ -1,12 +1,13 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import { addBlog, updatePost } from '../../Features/DataSlice'
+import {  updatePost } from '../../Features/DataSlice'
 import { template } from '../imgData'
+import { Mystate } from '../MainTypeScript'
 
 const EditPost = () => {
   const dispatch = useDispatch()
-  const state: any = useSelector(state => state)
+  const state:Mystate = useSelector((state:Mystate) => state)
   const navigate = useNavigate()
 
 
