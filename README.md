@@ -22,8 +22,8 @@ Blop App is a blog management application built using React.js and Redux, with T
 
 ## Installation and Setup
 
-1. Clone the repository
-2. Navigate to the project directory: `cd blop-app`
+1. Clone the repository `https://github.com/jaikrishnaverma-dev/blogapptoolkit.git`
+2. Navigate to the project directory: `cd blogapptoolkit`
 3. Install dependencies: `npm install`
 4. Start the development server: `npm start`
 5. Open your browser and navigate to `http://localhost:3000` to access the application.
@@ -37,7 +37,7 @@ Blop App is a blog management application built using React.js and Redux, with T
 
 ## Credits
 
-This project was created by [Your Name]. Special thanks to [Any contributors or resources you'd like to mention].
+This project was created by jai krishna verma. Special thanks to [Any contributors or resources you'd like to mention].
 
 ## License
 
